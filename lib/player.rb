@@ -1,20 +1,14 @@
 class Player
-  def initialize(full_name, monthly_cost, contract_length)
-    full_name = full_name
-    contract_length = contract_length
-    monthly_cost = monthly_cost
+  attr_reader :first_name, :last_name
+  def initialize(first_name, last_name)
+    @first_name = first_name
+    @last_name = last_name
+    @monthly_cost = monthly_cost
+    @contract_length = contract_length 
   end
-  def split_name(full_name)
-    name_array = full_name.split(' ')
 
-    if name_array.count > 1
-      last_name = name_array.pop 
-      first_name = name_array.join(' ')
-
-    else
-      first_name = name.array.first
-      last_name = nil
-    end
+  def full_name
+    @first_name + " " + @last_name
   end
 
 end
